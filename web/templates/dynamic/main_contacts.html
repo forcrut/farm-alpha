@@ -1,0 +1,61 @@
+{% load static %}
+<div class="main">
+	<link href="{% static 'css/contacts.css' %}" rel="stylesheet">
+
+	<div class="container-fluid">
+		<section class="container position-relative mb-3 p-0" x-data="{ loading: true }">
+			<template x-if="loading">
+				<div class="position-absolute top-50 start-50 translate-middle">
+					<div class="spinner-border" role="status">
+						<span class="visually-hidden">Loading...</span>
+					</div>
+				</div>
+			</template>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.8203085495948!2d27.50821517707312!3d53.84605983721596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd0f630f1cf07%3A0x2caad083fedbe677!2z0JjQvdGB0YLQuNGC0YPRgiDRgdC40YHRgtC10LzQvdGL0YUg0LjRgdGB0LvQtdC00L7QstCw0L3QuNC5INCyINCw0LPRgNC-0L_RgNC-0LzRi9GI0LvQtdC90L3QvtC8INC60L7QvNC_0LvQtdC60YHQtSDQndCw0YbQuNC-0L3QsNC70YzQvdC-0Lkg0LDQutCw0LTQtdC80LjQuCDQvdCw0YPQuiDQoNC10YHQv9GD0LHQu9C40LrQuCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sby!4v1734008157033!5m2!1sru!2sby" class="map border-0 bg-light" loading="lazy" x-on:load="loading = false" x-transition></iframe>
+		</section>
+		<section class="info container border border-black border-0 rounded-4 p-5">
+			<div class="row flex-column flex-sm-row">
+				<div class="col-12 col-sm-5 text-center text-sm-start">
+					<div class="text h2">
+						Контактная информация
+					</div>
+					<div class="text fw-light fs-4">
+						Минск, ул. Казинца 103
+					</div>
+					<div class="phones text text-secondary m-3">
+						<div class="text fs-5">
+							тел. (**)**-***-**
+						</div>
+						<div class="text fs-5">
+							тел. (**)**-***-**
+						</div>
+						<div class="text fs-5">
+							тел. (**)**-***-**
+						</div>
+					</div>
+					<div class="text fw-light fs-4">
+						График работы:
+					</div>
+					<div class="work-schedule text ms-4">
+						<div class="text fs-5">
+							9:00-18:00
+						</div>
+						<div class="text text-secondary fs-6">
+							Перерыв: 13:00-14:00
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-7">
+					<div class="institute-info text-center">
+						<img src="../static/images/place.png" class="d-inline-block img-fluid">
+						<span class="img-text d-inline-block text-center">
+							Институт системных исследований в агропромышленном комплексе<br>Национальной академии наук Республики Беларусь
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- <script src="{% static 'js/example.js' %}" defer></script> -->
+</div>

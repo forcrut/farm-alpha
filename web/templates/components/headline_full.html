@@ -1,0 +1,56 @@
+{% load static %}
+<section class="headline container-fluid border-bottom border-black border-5 p-0">
+	
+	<div class="bg-img-full row m-0">
+
+		<!-- Краткий калькулятор -->
+		<div class="calculator col-12 col-xl-5 col-lg-6 col-md-7 col-sm-10 d-flex flex-column border border-black border-1 rounded-4 my-auto mx-auto py-4 px-1">
+			<div class="h2 text-center">
+				Начните рассчёт для
+			</div>
+			<!-- TODO нужен ли тут x-data -->
+			<!-- TODO добавить mobile -->
+			<form id="quick-calculator-form" class="m-3 mb-0" method="get" x-data="quickCalculatorData()">
+				<div class="form-group row m-3 mb-5">
+					<!-- <label for="animalGroup" class="col-1 col-form-label text"></label> -->
+					<div class="col m-auto">
+						<select id="animal-group" class="selectpicker form-control form-control-lg" data-live-search="true" data-size="7" data-dropup-auto="false" data-popper-placement="left" title="Группа животных" x-model="selectedValue">
+							<option value="" hidden></option>
+							<!-- TODO values -->
+							<optgroup label="Коровы">
+								<option data-tokens="Коровы" value="1">Название1</option>
+								<option data-tokens="Коровы" value="2">Название2</option>
+								<option data-tokens="Коровы" value="3">Название3</option>
+								<option data-tokens="Коровы" value="4">Название4</option>
+								<option data-tokens="Коровы" value="5">Название5</option>
+							</optgroup>
+							<optgroup label="Телята">
+								<option data-tokens="Телята" value="6">Название1</option>
+								<option data-tokens="Телята" value="7">Название2</option>
+								<option data-tokens="Телята" value="8">Название3</option>
+								<option data-tokens="Телята" value="9">Название4</option>
+								<option data-tokens="Телята" value="10">Название5</option>
+							</optgroup>
+							<optgroup label="Бычки">
+								<option data-tokens="Бычки" value="11">Название1</option>
+								<option data-tokens="Бычки" value="12">Название2</option>
+								<option data-tokens="Бычки" value="13">Название3</option>
+								<option data-tokens="Бычки" value="14">Название4</option>
+								<option data-tokens="Бычки" value="15">Название5</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				<div id="form-footer" class="m-3 mb-0">
+					<div class="container-fluid text-center">
+						<button type="submit" id="quick-calculator-button" class="btn btn-primary px-5 fs-4" x-bind:disabled="selectedValue === ''">Рассчитать</button>
+						<div class="text d-flex flex-column justify-content-center">
+							Не нашли нужную группу?<br><a type="button" id="login2register" class="link-primary nav-link">Создайте её здесь!</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+</section>

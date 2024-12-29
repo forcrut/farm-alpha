@@ -1,0 +1,13 @@
+{% load static %}
+
+<div x-data="{ load_styles: true }">
+	<template x-if="load_styles">
+		<link href="{% static 'css/example.css' %}" rel="stylesheet">
+	</template>
+</div>
+
+<div x-data="{ load_scripts: true }">
+	<template x-if="load_scripts">
+		<script src="{% static 'js/example.js' %}" defer></script>
+	</template>
+</div>

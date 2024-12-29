@@ -1,0 +1,36 @@
+header {
+	background-color: rgb(255, 254, 255);
+	transition: transform 0.5s ease-in-out;
+}
+.navbar {
+	background-color: rgb(255, 254, 255);
+}
+.navbar-toggler {
+	transition: transform 0.3s ease;
+	transform-origin: center;
+}
+.navbar-toggler.collapsed {
+	transform: rotate(0deg);
+}
+.navbar-toggler:not(.collapsed) {
+	transform: rotate(-90deg);
+}
+.logo-1, .logo-2 {
+}
+.logo-1 {
+	width: 300px;
+	height: 100px;
+}
+.logo-2 {
+	width: 100px;
+	height: 100px;
+}
+@media (max-width: 991.98px) {
+	.logo-2 {
+		width: 80px;
+		height: 80px;
+	}
+	.dropdown-toggle::after {
+		align-self: flex-end;
+	}
+}

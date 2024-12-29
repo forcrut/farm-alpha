@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Стили -->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="preload" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<!-- <link rel="stylesheet" href="{% static 'css/bootstrap-icons.min.css' %}"> -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+	<link href="{% static 'css/base.css' %}" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="{% static 'ico/favicon.ico' %}">
+
+	<!-- Заголовок -->
+	<title x-text="title"></title>
+</head>
+<body class="d-flex flex-column justify-content-between" x-data="baseData()" x-on:resize.window="resizeWindow()" x-on:ready.document="initDocument()">
+	<!-- Заголовок -->
+	<div x-data="headerData()">
+		<div x-on:scroll.document.passive="updateMenu()">
+			{% include '../components/header.html' %}
+		</div>
+	</div>
+
+	<!-- Заставка -->
+	<div x-show="isHeadline">
+		<template x-if="currentPage !== urlNames.home.name">
+			{% include '../components/headline.html' %}
+		</template>
+		<template x-if="currentPage === urlNames.home.name">
+			{% include '../components/headline_full.html' %}
+		</template>
+	</div>
+
+	<!-- Контент -->
+	<main class="p-2 p-lg-5 flex-grow-1" x-cloak>
+		<template x-if="currentPage === urlNames.home.name">
+			{% include '../dynamic/main_home.html' %}
+		</template>
+		<template x-if="currentPage === urlNames.about.name">
+			{% include '../dynamic/main_about.html' %}
+		</template>
+		<template x-if="currentPage === urlNames.contacts.name">
+			{% include '../dynamic/main_contacts.html' %}
+		</template>
+	</main>
+
+	<!-- Профиль -->
+	<div x-show="isProfileOpen">
+		{% include '../components/profile.html' %}
+	</div>
+
+	<!-- Подвал -->
+	<div x-data="footerData()">
+		{% include '../components/footer.html' %}
+	</div>
+
+	<!-- Скрипты -->
+	<script src="{% static 'js/jquery-3.7.1.js' %}" defer></script>
+	<script src="{% static 'js/bootstrap.bundle.min.js' %}" defer></script>
+	<script src="{% static 'js/bootstrap-select.min.js' %}" defer></script>
+	<script src="{% static 'js/constants.js' %}" defer></script>
+	<script src="{% static 'js/base.js' %}" defer></script>
+	<script src="{% static 'js/spa.js' %}" defer></script>
+	<script src="{% static 'js/alpine.js' %}" defer></script>
+</body>
+</html>

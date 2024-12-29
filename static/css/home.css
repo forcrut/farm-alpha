@@ -1,0 +1,28 @@
+.news {
+}
+.news-item {
+	background-color: rgba(255, 254, 255, 0.7);
+	transition: transform 0.3s ease-in-out;
+	position: relative;
+}
+.news-item:hover {
+	background-color: rgba(255, 254, 255, 1);
+	transform: scale(1.05);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.news-title {
+}
+.news-url {
+}
+.news-description {
+}
+.news-img {
+	width: 100%;
+	max-height: 324px;
+	aspect-ratio: 16/10;
+}
+.info {
+	/*width: 1800px;
+	height: 800px;*/
+	background-color: rgba(255, 254, 255, 1);
+}

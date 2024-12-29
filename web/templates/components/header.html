@@ -1,0 +1,116 @@
+<header class="fixed-top border-bottom border-black border-5 bg-light py-1">
+	<nav class="menu navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<div class="m-1">
+				<a class="d-flex align-items-center navbar-brand" x-on:click.prevent="loadPage('home')" x-bind:href="urlNames.home.url">
+					<img src="" id="logo" class="">
+				</a>
+			</div>
+			<a class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+				aria-controls="navbarContent" aria-expanded="false" aria-label="Развернуть меню">
+				<span class="navbar-toggler-icon"></span>
+			</a>
+			<div id="navbarContent" class="collapse navbar-collapse me-lg-0 ms-lg-5 me-xs-5">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item pe-3">
+						<a class="nav-link active fw-bold" x-on:click.prevent="loadPage('home')" x-bind:href="urlNames.home.url">
+							<div class="menu-item d-flex align-items-center flex-lg-column">
+								<span class="icon-fill bi bi-house-fill fs-3 me-lg-0 me-3" x-show="currentPage === urlNames.home.name"></span>
+								<span class="icon bi bi-house fs-3 me-lg-0 me-3" x-show="currentPage !== urlNames.home.name"></span>
+								<span class="navbar-text">
+									Главная
+								</span>
+							</div>
+						</a>
+					</li>
+					<li class="nav-item pe-3">
+						<a class="nav-link fw-bold" x-on:click.prevent="loadPage('about')" x-bind:href="urlNames.about.url">
+							<div class="menu-item d-flex align-items-center flex-lg-column">
+								<span class="icon-fill bi bi-book-fill fs-3 me-lg-0 me-3" x-show="currentPage === urlNames.about.name"></span>
+								<span class="icon bi bi-book fs-3 me-lg-0 me-3" x-show="currentPage !== urlNames.about.name"></span>
+								<span class="navbar-text">
+									О нас
+								</span>
+							</div>
+						</a>
+					</li>
+					<li class="nav-item pe-3">
+						<a class="nav-link fw-bold" x-on:click.prevent="loadPage('operations')" x-bind:href="urlNames.operations.url">
+							<div class="menu-item d-flex align-items-center flex-lg-column">
+								<span class="icon-fill bi bi-file-bar-graph-fill fs-3 me-lg-0 me-3" x-show="currentPage === urlNames.operations.name"></span>
+								<span class="icon bi bi-file-bar-graph fs-3 me-lg-0 me-3" x-show="currentPage !== urlNames.operations.name"></span>
+								<span class="navbar-text">
+									Расчёт рациона
+								</span>
+							</div>
+						</a>
+					</li>
+					<!-- <li class="nav-item dropdown pe-3">
+						<div id="navbarDropdown" class="menu-item nav-link d-flex align-items-center dropdown-toggle fw-bold flex-lg-column" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="icon-fill bi bi-tags-fill fs-3 me-lg-0 me-3 d-none"></span>
+							<span class="icon bi bi-tags fs-3 me-lg-0 me-3 d-none"></span>
+							<span class="navbar-text">
+								Каталог
+							</span>
+						</div>
+						<ul class="sub-menu dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" x-on:click.prevent="loadPage('')" href="/">
+									<div class="sub-menu-item menu-item d-flex align-items-center">
+										<span class="icon-fill bi bi-bug-fill fs-3 me-3 d-none"></span>
+										<span class="icon bi bi-bug fs-3 me-3 d-none"></span>
+										<span class="navbar-text-secondary">
+											Группы животных
+										</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" x-on:click.prevent="loadPage('')" href="/">
+									<div class="sub-menu-item menu-item d-flex align-items-center">
+										<span class="icon-fill bi bi-collection-fill fs-3 me-3 d-none"></span>
+										<span class="icon bi bi-collection fs-3 me-3 d-none"></span>
+										<span class="navbar-text-secondary">
+											Рационы
+										</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" x-on:click.prevent="loadPage('')" href="/">
+									<div class="sub-menu-item menu-item d-flex align-items-center">
+										<span class="icon-fill bi bi-octagon-fill fs-3 me-3 d-none"></span>
+										<span class="icon bi bi-octagon fs-3 me-3 d-none"></span>
+										<span class="navbar-text-secondary">
+											Корма
+										</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</li> -->
+					<li class="nav-item pe-3">
+						<a class="nav-link fw-bold" x-on:click.prevent="loadPage('contacts')" x-bind:href="urlNames.contacts.url">
+							<div class="menu-item d-flex align-items-center flex-lg-column">
+								<span class="icon-fill bi bi-telephone-fill fs-3 me-lg-0 me-3" x-show="currentPage === urlNames.contacts.name"></span>
+								<span class="icon bi bi-telephone fs-3 me-lg-0 me-3" x-show="currentPage !== urlNames.contacts.name"></span>
+								<span class="navbar-text">
+									Контакты
+								</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<button type="button" id="profile-link" class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#profile" x-on:click="loadProfile()">
+					<div class="d-flex align-items-center">
+						<span id="profile-icon-fill" class="bi bi-person-fill fs-3 border border-black rounded-5 me-3"></span>
+						<span id="profile-icon" class="bi bi-person fs-3 border border-black rounded-5 me-3 d-none"></span>
+						<span class="navbar-text d-lg-none">
+							Профиль
+						</span>
+					</div>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>

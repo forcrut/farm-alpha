@@ -1,0 +1,49 @@
+<form id="profile-view-form" class="profile-form no-focus-form" method="get" x-data="viewData()" :action="actionUrl">
+	{% csrf_token %}
+	{% for error in form.non_field_errors %}
+		<div class="invalid-feedback">{{ error }}</div>
+	{% endfor %}
+	<div class="row mb-2">
+		<div class="form-group col-sm-6 col-xs-auto">
+			<label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+			<input type="text" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" class="form-control {{ form.last_name.field.widget.attrs.class }}" placeholder="&mdash;" readonly>
+			{% for error in form.last_name.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+		</div>
+		<div class="form-group col-sm-6 col-xs-auto">
+			<label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+			<input type="text" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" class="form-control {{ form.first_name.field.widget.attrs.class }}" placeholder="&mdash;" readonly>
+			{% for error in form.first_name.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="form-group col-sm-6 col-xs-auto">
+			<label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+			<input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" class="form-control {{ form.username.field.widget.attrs.class }}" placeholder="&mdash;" readonly>
+			{% for error in form.username.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+		</div>
+		<div class="form-group col-sm-6 col-xs-auto">
+			<label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+			<input type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" class="form-control {{ form.email.field.widget.attrs.class }}" placeholder="&mdash;" readonly>
+			{% for error in form.email.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div id="form-footer" class="container mb-3">
+		<div class="container-fluid text-center">
+			<button type="button" id="profile-edit-button" class="btn btn-primary px-5">Редактировать</button>
+		</div>
+	</div>
+</form>
+<form id="profile-logout-form" class="profile-form" method="post" x-data="logoutData()" :action="actionUrl">
+	{% csrf_token %}
+	<div class="text d-flex justify-content-center align-items-end">
+		<button type="submit" id="logout-button" class="link-danger nav-link">Выйти</button>
+	</div>
+</form>

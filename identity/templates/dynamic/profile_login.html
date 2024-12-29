@@ -1,0 +1,29 @@
+<form id="profile-login-form" class="profile-form" method="post" x-data="loginData()" :action="actionUrl">
+	{% csrf_token %}
+	{% for error in form.non_field_errors  %}
+		<div class="d-block invalid-feedback">{{ error }}</div>
+	{% endfor %}
+	<div class="form-group col-12 mb-2">
+		<label for="{{ form.username_or_email.id_for_label }}">{{ form.username_or_email.label }}</label>
+		<input type="text" id="{{ form.username_or_email.id_for_label }}" name="{{ form.username_or_email.name }}" value="{% if form.username_or_email.value %}{{ form.username_or_email.value }}{% endif %}" class="form-control {{ form.username_or_email.field.widget.attrs.class }}" placeholder="ivan or example@domain.com" required>
+		{% for error in form.username_or_email.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+	</div>
+	<div class="form-group col-12 mb-5">
+		<label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+			<input type="password" id="{{ form.password.id_for_label }}" name="{{ form.password.name }}" value="" class="form-control {{ form.password.field.widget.attrs.class }}" placeholder="********" required>
+			{% for error in form.password.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+			{% endfor %}
+		</label>
+	</div>
+	<div id="form-footer" class="container pb-3">
+		<div class="container-fluid text-center">
+			<div class="text d-flex justify-content-center">
+				Еще нет аккаунта?<button type="button" id="login2register-button" x-on:click="loadProfile('register')" class="link-primary nav-link">Зарегистрироваться</button>
+			</div>
+			<button type="submit" class="btn btn-primary px-5">Войти</button>
+		</div>
+	</div>
+</form>

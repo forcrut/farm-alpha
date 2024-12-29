@@ -1,0 +1,112 @@
+/* IMPORTS */
+@import url('header.css');
+@import url('headline.css');
+/* ALL */
+/** {
+	transition: all 5.1s ease;
+}*/
+
+
+
+/* TAGS */
+/* body */
+body {
+	min-height: 100vh;
+/*	visibility: hidden;*/
+	background-image: url('/static/images/background.webp');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+/*body.loaded {
+	visibility: visible;
+	transition: visibility 0s linear 0.3s;
+}*/
+
+/* MAIN */
+/* main */
+main {
+	padding-top: 50px;
+	background-color: rgba(255, 254, 255, .5);
+}
+/* container */
+.container {
+}
+
+/* FOOTER */
+footer {
+/*	z-index: 1000;*/
+	background-color: rgba(255, 254, 255, .8);
+}
+
+/* TEXT */
+.brand {
+	font-size: 30px;
+	text-shadow: 1px 2px 5px black;
+}
+.navbar-text {
+	font-size: 20px;
+}
+.content {
+	color: black;
+	font-size: 18px;
+}
+.content .text {
+}
+
+/* ICONS */
+.icon-logo {
+	width: 100px;
+	height: 100px;
+}
+.icon-logo {
+	width: 70px;
+	height: 70px;
+/*	background-color: rgb(255, 254, 255);*/
+}
+.icon-profile {
+	width: 180px;
+	height: 180px;
+}
+
+/* OTHERS */
+/*  */
+.modal-title {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+/* BUTTONS */
+/*.modal-footer .btn {
+	width: 300px;
+}*/
+/*.btn {
+	background-color: gray;
+	border-color: darkgray;
+}
+.btn.disabled {
+	background-color: gray;
+	border-color: darkgray;
+}*/
+
+.no-focus-form input:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+/* MEDIA */
+/* <= lg 992px*/
+@media (max-width: 991.98px) {
+	.icon-logo {
+		width: 50px;
+		height: 50px;
+	}
+	.icon-profile {
+		width: 100px;
+		height: 100px;
+	}
+}
+/* >= xl */
+@media (min-width: 1200px) {
+}
